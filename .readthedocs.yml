@@ -2,7 +2,7 @@
 version: 2
 
 sphinx:
-  configuration: .sphinx/conf.py
+  configuration: conf.py
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
