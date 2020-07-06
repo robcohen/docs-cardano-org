@@ -1,21 +1,23 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import sys
+import os
 import sphinx_rtd_theme
 import recommonmark
+
 from recommonmark.transform import AutoStructify
+from os.path import abspath, join, dirname
+
+sys.path.insert(0, abspath(join(dirname(__file__))))
+
+# -- RTD configuration ------------------------------------------------
+
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
+
+# This is used for linking and such so we link to the thing we're building
+rtd_version = os.environ.get("READTHEDOCS_VERSION", "latest")
+if rtd_version not in ["stable", "latest"]:
+    rtd_version = "stable"
 
 # -- Project information -----------------------------------------------------
 
@@ -35,10 +37,13 @@ master_doc = 'index'
 
 extensions = [
     "sphinx_rtd_theme",
-    'sphinxcontrib.mermaid',
     'recommonmark',
     'sphinx_markdown_tables',
-    'sphinxemoji.sphinxemoji'
+    'sphinxemoji.sphinxemoji',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.viewcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -48,6 +53,14 @@ html_static_path = ['_static']
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
+}
+
+intersphinx_mapping = {
+    "commandsv1": (
+        "https://robotpy.readthedocs.io/projects/commands-v1/en/%s/"
+        % rtd_version,
+        None,
+    ),
 }
 
 # List of patterns, relative to source directory, that match files and
@@ -93,6 +106,8 @@ html_context = {
   "conf_py_path": "/",
   "source_suffix": source_suffix,
 }
+
+# -- Custom Document processing ----------------------------------------------
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
