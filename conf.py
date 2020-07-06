@@ -56,8 +56,8 @@ source_suffix = {
 }
 
 intersphinx_mapping = {
-    "commandsv1": (
-        "https://robotpy.readthedocs.io/projects/commands-v1/en/%s/"
+    "cardano-node": (
+        "https://cardano.readthedocs.io/projects/cardano-node/en/%s/"
         % rtd_version,
         None,
     ),
