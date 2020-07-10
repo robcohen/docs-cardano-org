@@ -57,3 +57,4 @@ Cardano is developing a smart contract platform which seeks to deliver more adva
    cardano-node <https://cardano.readthedocs.io/projects/cardano-node/en/latest/>
    cardano-adrestia <https://cardano.readthedocs.io/projects/adrestia/en/latest/>
    cardano-wallet <https://cardano.readthedocs.io/projects/cardano-wallet/en/latest/>
+   plutus <https://cardano.readthedocs.io/projects/plutus/en/latest/>
