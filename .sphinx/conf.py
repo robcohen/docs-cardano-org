@@ -8,7 +8,7 @@ import recommonmark
 from recommonmark.transform import AutoStructify
 from os.path import abspath, join, dirname
 
-sys.path.insert(0, abspath(join(dirname(__file__))))
+sys.path.insert(0, abspath(join(dirname(__file__), '..')))
 
 # -- RTD configuration ------------------------------------------------
 
@@ -47,8 +47,8 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-html_static_path = ['_static']
+templates_path = ['.sphinx/_templates']
+html_static_path = ['.sphinx/_static']
 
 source_suffix = {
     '.rst': 'restructuredtext',
