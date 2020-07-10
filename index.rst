@@ -29,10 +29,14 @@ Cardano is developing a smart contract platform which seeks to deliver more adva
    :titlesonly:
    :hidden:
 
-   learn-about-cardano/index
-   cardano-tutorials/README
-   glossary
-   release-notes
+   explore-cardano/what-is-a-cardano-node
+   explore-cardano/understanding-consensus
+   explore-cardano/what-is-a-stakepool
+   explore-cardano/understanding-the-delegation-mechanism
+   explore-cardano/understanding-pledging-and-rewards
+   explore-cardano/further-reading
+   explore-cardano/glossary
+   explore-cardano/release-notes
 
 .. toctree::
    :maxdepth: 3
@@ -40,10 +44,10 @@ Cardano is developing a smart contract platform which seeks to deliver more adva
    :titlesonly:
    :hidden:
 
-   contribute-cardano/providing-feedback
-   contribute-cardano/ambassadors-program
-   contribute-cardano/community-generated-content
-   get-support
+   cardano-community/providing-feedback
+   cardano-community/ambassadors-program
+   cardano-community/community-generated-content
+   cardano-community/get-support
 
 .. toctree::
    :caption: Cardano Components
